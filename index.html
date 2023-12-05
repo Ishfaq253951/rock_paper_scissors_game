@@ -13,11 +13,16 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link
+			rel="shortcut icon"
+			href="./images/favicon.ico"
+			type="image/x-icon"
+		/>
 	</head>
 	<body class="">
 		<header class="flow-horizontal | mt-48 mb-32 txt-center">
 			<h2 class="flex-2">Rock Paper Scissors</h2>
-			<div class="icon | mr-48"></div>
+			<div class="icon"></div>
 		</header>
 		<main class="flow-vertical">
 			<h3 class="uppercase">Reset the tour</h3>
@@ -31,12 +36,12 @@
 			</div>
 			<div>
 				<div class="game-details | txt-center">
-					<h1>YOU WON ! 🎉</h1>
+					<h1 id="status" class="uppercase">Are you ready?🤩</h1>
 				</div>
 				<div class="flow-horizontal | mt-32">
-					<div class="player | mr-56"></div>
+					<div id="player" class="player | mr-56">...</div>
 					<span>VS</span>
-					<div class="computer | ml-56 flip"></div>
+					<div id="computer" class="computer | ml-56 flip">...</div>
 				</div>
 			</div>
 
@@ -45,9 +50,13 @@
 					Choose your move, rock paper or scissors?
 				</p>
 				<div class="flow-horizontal | mt-32">
-					<button class="uppercase">Rock</button>
-					<button class="uppercase">Paper</button>
-					<button class="uppercase">Scissors</button>
+					<button class="Btn | uppercase" id="rock-btn">Rock</button>
+					<button class="Btn | uppercase" id="paper-btn">
+						Paper
+					</button>
+					<button class="Btn | uppercase" id="scissors-btn">
+						Scissors
+					</button>
 				</div>
 			</div>
 		</main>
@@ -61,5 +70,25 @@
 				></a>
 			</p>
 		</footer>
+
+		<div class="modal" id="modal">
+			<div
+				class="modal-content | flow-vertical | pd-tb br-15 txt-center border"
+			>
+				<h1 class="uppercase mt-16" id="modal-status">
+					Congrats, YOU WON ! 🎉
+				</h1>
+				<div class="flow-horizontal">
+					<p>Your Score: <span id="modal-player-score">5</span></p>
+					<p>
+						Computer Score: <span id="modal-computer-score">0</span>
+					</p>
+				</div>
+
+				<button id="replay-btn">Play Again!</button>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
 	</body>
 </html>

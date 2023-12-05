@@ -9,6 +9,7 @@
 	--fs-800: 2.5rem;
 
 	--bg-primary-400: #d9d9d9;
+	--bg-primary-500: #afaeae;
 	--bg-accent-400: #df2e38;
 
 	--clr-primary-400: #000000;
@@ -18,6 +19,9 @@
 	--clr-accent-700: #353535;
 
 	--font-family: Inter;
+
+	--pd-lr: 50px;
+	--pd-tb: 25px;
 }
 
 * {
@@ -58,14 +62,16 @@ p {
 	color: var(--clr-primary-400);
 }
 
-.player {
+/* .player {
 	background-image: url("./images/light_mode_paper.svg");
-	width: 100px;
-	height: 100px;
 }
-
 .computer {
 	background-image: url("./images/light_mode_rock.svg");
+} */
+
+.player,
+.computer {
+	font-size: 3rem;
 	width: 100px;
 	height: 100px;
 }
@@ -92,7 +98,7 @@ button {
 	font-size: var(--fs-600);
 	font-weight: 700;
 	color: #fff;
-	padding: 25px 50px;
+	padding: var(--pd-tb) var(--pd-lr);
 	border-radius: 15px;
 	border: none;
 	flex-shrink: 1;
@@ -176,6 +182,18 @@ button {
 	color: var(--clr-accent-700);
 }
 
+.pd-tb {
+	padding: 25px 0;
+}
+
+.br-15 {
+	border-radius: 15px;
+}
+
+.border {
+	border: 2px solid gray;
+}
+
 /* Block */
 
 .player,
@@ -201,4 +219,46 @@ button:active {
 	cursor: pointer;
 }
 
+.icon {
+	position: fixed;
+	top: 32px;
+	right: 48px;
+}
+
+.modal {
+	position: fixed;
+	padding-top: 45px;
+	left: 0;
+	right: 0;
+	top: 0;
+	max-width: 100%;
+	display: none;
+	justify-content: center;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+	width: 50%;
+	height: 60%;
+	background-color: var(--bg-primary-400);
+}
+
 /* Exception */
+
+.modal-content button {
+	background-color: var(--clr-primary-700);
+	opacity: 0.9;
+}
+
+.modal-content button:hover {
+	opacity: 0.7;
+}
+
+.modal-content button:active {
+	opacity: 0.9;
+}
+
+.modal-content p {
+	font-size: var(--fs-600);
+}
