@@ -42,12 +42,18 @@ h1 {
 }
 
 h2 {
-	font-size: var(--fs-700);
+	font-size: var(--fs-701, 2.3rem);
 	color: var(--clr-primary-700);
 }
 
-h3 {
+h3,
+.vs {
 	font-size: var(--fs-500);
+}
+
+.vs {
+	font-weight: 700;
+	color: var(--clr-primary-400);
 }
 
 a {
@@ -261,4 +267,20 @@ button:active {
 
 .modal-content p {
 	font-size: var(--fs-600);
+}
+
+.dark.icon {
+	background-image: url(./images/dark_mode_sun-icon.svg);
+}
+
+.dark {
+	--bg-primary-400: #353535;
+	--bg-primary-500: #afaeae;
+	--bg-accent-400: #2751a3;
+
+	--clr-primary-400: #fff;
+	--clr-primary-700: #bebfd1;
+
+	--clr-accent-400: #6881d8;
+	--clr-accent-700: #353535;
 }

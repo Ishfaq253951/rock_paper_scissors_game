@@ -15,6 +15,8 @@ const modalComputerScore = document.getElementById("modal-computer-score");
 const modal = document.getElementById("modal");
 const modalStat = document.getElementById("modal-status");
 
+// const body = document.querySelector("body");
+
 let compChoice = "";
 let playerChoice = "";
 
@@ -23,19 +25,35 @@ let compScore = 0;
 
 rockBtn.addEventListener("click", () => {
 	playerMove.innerText = "";
-	playerMove.style.backgroundImage = "url(./images/light_mode_rock.svg)";
+
+	if (body.classList.contains("dark")) {
+		playerMove.style.backgroundImage = "url(./images/dark_mode_rock.svg)";
+	} else {
+		playerMove.style.backgroundImage = "url(./images/light_mode_rock.svg)";
+	}
+
 	runGame("rock");
 });
 
 paperBtn.addEventListener("click", () => {
 	playerMove.innerText = "";
-	playerMove.style.backgroundImage = "url(./images/light_mode_paper.svg)";
+	if (body.classList.contains("dark")) {
+		playerMove.style.backgroundImage = "url(./images/dark_mode_paper.svg)";
+	} else {
+		playerMove.style.backgroundImage = "url(./images/light_mode_paper.svg)";
+	}
 	runGame("paper");
 });
 
 scissorsBtn.addEventListener("click", () => {
 	playerMove.innerText = "";
-	playerMove.style.backgroundImage = "url(./images/light_mode_scissors.svg)";
+	if (body.classList.contains("dark")) {
+		playerMove.style.backgroundImage =
+			"url(./images/dark_mode_scissors.svg)";
+	} else {
+		playerMove.style.backgroundImage =
+			"url(./images/light_mode_scissors.svg)";
+	}
 	runGame("scissors");
 });
 
@@ -53,18 +71,33 @@ function displayComputerMove() {
 
 	if (choice === 1) {
 		computerMove.innerText = "";
-		computerMove.style.backgroundImage =
-			"url(./images/light_mode_rock.svg)";
+		if (body.classList.contains("dark")) {
+			computerMove.style.backgroundImage =
+				"url(./images/dark_mode_rock.svg)";
+		} else {
+			computerMove.style.backgroundImage =
+				"url(./images/light_mode_rock.svg)";
+		}
 		compChoice = "rock";
 	} else if (choice === 2) {
 		computerMove.innerText = "";
-		computerMove.style.backgroundImage =
-			"url(./images/light_mode_paper.svg)";
+		if (body.classList.contains("dark")) {
+			computerMove.style.backgroundImage =
+				"url(./images/dark_mode_paper.svg)";
+		} else {
+			computerMove.style.backgroundImage =
+				"url(./images/light_mode_paper.svg)";
+		}
 		compChoice = "paper";
 	} else if (choice === 3) {
 		computerMove.innerText = "";
-		computerMove.style.backgroundImage =
-			"url(./images/light_mode_scissors.svg)";
+		if (body.classList.contains("dark")) {
+			computerMove.style.backgroundImage =
+				"url(./images/dark_mode_scissors.svg)";
+		} else {
+			computerMove.style.backgroundImage =
+				"url(./images/light_mode_scissors.svg)";
+		}
 		compChoice = "scissors";
 	}
 }
